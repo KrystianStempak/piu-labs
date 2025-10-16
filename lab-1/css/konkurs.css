@@ -1,0 +1,145 @@
+.theme-switch {
+  display: none;
+}
+
+.contest-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.form-header h2 {
+  color: #2c3e50;
+  font-size: 1.5em;
+  line-height: 1.3em;
+}
+
+.theme-icon {
+  font-size: 1.8em;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.theme-icon:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+.contest-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contest-form label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.contest-form input,
+.contest-form select {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.contest-form input:focus,
+.contest-form select:focus {
+  border-color: #1abc9c;
+  outline: none;
+}
+
+#color {
+  height: 40px;
+  cursor: pointer;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+legend {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+fieldset label {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.agree {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* === TRYB CIEMNY (tylko formularz) === */
+.theme-switch:checked + .contest-container {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Teksty i etykiety w trybie ciemnym */
+.theme-switch:checked + .contest-container .form-header h2,
+.theme-switch:checked + .contest-container label,
+.theme-switch:checked + .contest-container legend {
+  color: #f1f1f1;
+}
+
+/* Pola formularza */
+.theme-switch:checked + .contest-container input,
+.theme-switch:checked + .contest-container select,
+.theme-switch:checked + .contest-container fieldset {
+  background-color: #3a3a3a;
+  color: #f1f1f1;
+  border-color: #555;
+}
+
+/* Checkboxy i radio buttony */
+.theme-switch:checked + .contest-container input[type="checkbox"],
+.theme-switch:checked + .contest-container input[type="radio"] {
+  accent-color: #1abc9c;
+}
+
+/* Przycisk */
+.theme-switch:checked + .contest-container button {
+  background-color: #388e3c;
+}
+
+.theme-switch:checked + .contest-container button:hover {
+  background-color: #2e7d32;
+}
