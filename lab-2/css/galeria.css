@@ -1,0 +1,71 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 40px;
+        }
+
+        .gallery-container {
+            display: grid;
+            gap: 20px; /* Odstęp między elementami galerii */
+            padding: 0 10px;
+            max-width: 1600px; /* Ograniczenie maksymalnej szerokości galerii */
+            margin: 0 auto;
+        }
+
+        figure {
+            margin: 0; /* Usunięcie domyślnych marginesów figure */
+            padding: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px; /* Zaokrąglone rogi */
+            overflow: hidden; /* Upewnienie się, że obrazek nie wychodzi poza rogi figure */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        figure:hover {
+            transform: translateY(-5px); /* Lekkie podniesienie */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 0 4px #007bff; /* Efekt po najechaniu: cień i ramka (niebieska) */
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px 10px 0 0; /* Zaokrąglone rogi tylko u góry dla obrazu */
+        }
+
+        figcaption {
+            padding: 15px;
+            text-align: center;
+            font-style: italic;
+            font-size: 0.9em;
+            color: #555;
+            border-top: 1px solid #eee;
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* RESPONSIVE LAYOUT I DOBÓR ZDJĘĆ - ZGODNIE Z TABELĄ */
+        /* ---------------------------------------------------------------------- */
+
+        /* Domyślnie - dla < 1200px (1 kolumna) */
+        .gallery-container {
+            grid-template-columns: 1fr; /* Jedna kolumna */
+        }
+        
+        /* -------------------------------------------------- */
+        /* 1. Dla okna >= 1200px (2 kolumny) */
+        /* -------------------------------------------------- */
+        @media (min-width: 1200px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr); /* Dwie kolumny */
+            }
+        }
