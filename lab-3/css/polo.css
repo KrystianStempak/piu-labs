@@ -53,6 +53,11 @@ body {
     background-position: center;
     border: 3px solid var(--theme-color); 
     border-radius: 8px;
+    transition: border-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+#main-product-image:hover {
+    box-shadow: 0 0 15px -3px var(--theme-color);
 }
 
 
@@ -62,7 +67,6 @@ body {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    
     align-items: center;
 }
 
@@ -71,7 +75,6 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    
     align-self: stretch;
 }
 
@@ -88,6 +91,7 @@ body {
     border-radius: 6px;
     font-size: 14px;
     font-weight: 500;
+    transition: background-color 0.4s ease;
 }
 
 .product-description {
@@ -95,7 +99,6 @@ body {
     line-height: 1.5;
     color: #666;
     margin-bottom: 25px;
-    
     align-self: stretch;
 }
 
@@ -134,6 +137,11 @@ body {
     align-items: center;
     position: relative; 
     overflow: hidden; 
+    transition: transform 0.2s ease;
+}
+
+.color-swatches .swatch-btn:hover {
+    transform: scale(1.15);
 }
 
 .color-swatches .swatch-btn::before {
@@ -146,6 +154,7 @@ body {
     position: relative;
     z-index: 2; 
     transform: scale(0);
+    transition: transform 0.2s;
 }
 
 .color-swatches .swatch-btn::after {
@@ -159,6 +168,7 @@ body {
     border-radius: 50%;
     z-index: 1; 
     transform: scale(0);
+    transition: transform 0.2s;
 }
 
 #color-b:checked ~ .product-wrapper label[for="color-b"]::before,
@@ -175,6 +185,7 @@ body {
     transform: scale(1);
 }
 
+
 .size-buttons .size-btn {
     padding: 8px 16px;
     border: 2px solid #000; 
@@ -185,7 +196,17 @@ body {
     cursor: pointer; 
     display: inline-block; 
     text-align: center;
+    transition: background-color 0.2s, 
+                color 0.2s, 
+                transform 0.2s ease-out, 
+                box-shadow 0.2s ease-out;
 }
+
+.size-buttons .size-btn:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 #size-s:checked ~ .product-wrapper label[for="size-s"],
 #size-m:checked ~ .product-wrapper label[for="size-m"],
 #size-l:checked ~ .product-wrapper label[for="size-l"],
@@ -193,6 +214,8 @@ body {
     background-color: var(--theme-color);
     color: #ffffff;
     border-color: #000; 
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .product-price {
@@ -205,7 +228,7 @@ body {
 
 .add-to-cart-btn {
     width: 100%; 
-    max-width: 230px; 
+    max-width: 200px; 
     padding: 15px;
     background-color: var(--theme-color);
     color: #ffffff;
@@ -219,11 +242,16 @@ body {
     justify-content: center;
     align-items: center;
     gap: 8px;
+    transition: background-color 0.4s ease, 
+                filter 0.2s ease, 
+                transform 0.2s ease;
 }
 
 .add-to-cart-btn:hover {
     filter: brightness(90%);
+    transform: scale(1.02);
 }
+
 
 #color-r:checked ~ .product-wrapper {
     --theme-color: #b02a37; 
@@ -237,5 +265,5 @@ body {
 
 #color-y:checked ~ .product-wrapper {
     --theme-color: #cc9c00; 
-    --product-image: url('../polo/polo_g.png');
+    --product-image: url('../polo/polo_y.png');
 }
