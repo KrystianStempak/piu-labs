@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kształty - Lab 5</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>Generator Kształtów</h1>
+            
+            <div class="controls">
+                <div class="group">
+                    <button id="add-square" class="btn btn-primary">Dodaj Kwadrat</button>
+                    <button id="recolor-squares" class="btn btn-secondary">Przekoloruj</button>
+                </div>
+                <div class="group">
+                    <button id="add-circle" class="btn btn-primary">Dodaj Kółko</button>
+                    <button id="recolor-circles" class="btn btn-secondary">Przekoloruj</button>
+                </div>
+            </div>
+
+            <div class="stats">
+                <span class="stat-item">Kwadraty: <strong id="count-squares">0</strong></span>
+                <span class="stat-item">Kółka: <strong id="count-circles">0</strong></span>
+            </div>
+        </header>
+
+        <main id="shapes-container" class="shapes-grid">
+            </main>
+    </div>
+
+</body>
+</html>
