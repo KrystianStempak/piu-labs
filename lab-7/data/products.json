@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Buty Biegowe Pro",
+        "price": 249.00,
+        "image": "https://picsum.photos/id/103/300/250"
+    },
+    {
+        "id": 2,
+        "title": "Plecak Miejski",
+        "price": 129.99,
+        "image": "https://picsum.photos/id/177/300/250"
+    },
+    {
+        "id": 3,
+        "title": "Okulary Przeciwsłoneczne",
+        "price": 59.00,
+        "image": "https://picsum.photos/id/26/300/250"
+    },
+    {
+        "id": 4,
+        "title": "Kurtka Zimowa",
+        "price": 399.00,
+        "image": "https://picsum.photos/id/325/300/250"
+    },
+    {
+        "id": 5,
+        "title": "T-Shirt Basic",
+        "price": 89.00,
+        "image": "https://picsum.photos/id/435/300/250"
+    },
+    {
+        "id": 6,
+        "title": "Smart Watch V2",
+        "price": 699.00,
+        "image": "https://picsum.photos/id/525/300/250"
+    }
+]

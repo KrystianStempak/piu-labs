@@ -2,65 +2,35 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 7 - Web Components</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lab 7 - Sklep</title>
+    
     <script type="module" src="js/product-card.js"></script>
+    <script type="module" src="js/product-list.js"></script>
+    <script type="module" src="js/shopping-cart.js"></script>
+
+    <style>
+        body { font-family: sans-serif; display: flex; gap: 30px; padding: 20px; background-color: #f4f4f4; }
+        product-list { flex: 1; }
+        shopping-cart { position: sticky; top: 20px; }
+    </style>
 </head>
 <body>
 
-    <h1>Nowa Kolekcja Jesień 2025</h1>
+    <product-list id="my-list"></product-list>
 
-    <div class="products-grid">
+    <shopping-cart id="my-cart"></shopping-cart>
 
-        <product-card>
-            <span slot="promo">-20%</span>
-            <img slot="image" src="https://picsum.photos/id/103/300/300" alt="Buty sportowe">
-            <h3 slot="title">Buty Biegowe Pro</h3>
-            <span slot="price">249.00 PLN</span>
-            <div slot="colors">Kolory: Czarny, Biały, Neon</div>
-            <div slot="sizes">Rozmiary: 40-46</div>
-        </product-card>
+    <script>
+        const productList = document.getElementById('my-list');
+        const cart = document.getElementById('my-cart');
 
-        <product-card>
-            <img slot="image" src="https://picsum.photos/id/177/300/300" alt="Plecak">
-            <h3 slot="title">Plecak Miejski</h3>
-            <span slot="price">129.99 PLN</span>
-            <div slot="sizes">Pojemność: 20L, 30L</div>
-        </product-card>
-
-        <product-card>
-            <img slot="image" src="https://picsum.photos/id/26/300/300" alt="Akcesoria">
-            <h3 slot="title">Okulary Przeciwsłoneczne</h3>
-            <span slot="price">59.00 PLN</span>
-        </product-card>
-
-        <product-card>
-            <span slot="promo">WYPRZEDAŻ</span>
-            <img slot="image" src="https://picsum.photos/id/325/300/300" alt="Kurtka">
-            <h3 slot="title">Kurtka Zimowa</h3>
-            <span slot="price">399.00 PLN</span>
-            <div slot="colors">Kolory: Granatowy</div>
-            <div slot="sizes">Rozmiary: S, M, L, XL</div>
-        </product-card>
-
-        <product-card>
-            <img slot="image" src="https://picsum.photos/id/435/300/300" alt="T-shirt">
-            <h3 slot="title">T-Shirt Basic 3-pak</h3>
-            <span slot="price">89.00 PLN</span>
-            <div slot="colors">Kolory: Mix</div>
-            <div slot="sizes">Rozmiary: S-XXL</div>
-        </product-card>
-
-        <product-card>
-            <span slot="promo">NOWOŚĆ</span>
-            <img slot="image" src="https://picsum.photos/id/525/300/300" alt="Zegarek">
-            <h3 slot="title">Smart Watch V2</h3>
-            <span slot="price">699.00 PLN</span>
-            <div slot="colors">Pasek: Skórzany, Silikonowy</div>
-        </product-card>
-
-    </div>
+        productList.addEventListener('add-to-cart', (e) => {
+            const productData = e.detail;
+            console.log("Dodano do koszyka:", productData);
+            
+            cart.addItem(productData);
+        });
+    </script>
 
 </body>
 </html>
